@@ -1,4 +1,4 @@
-localhost :443 {
+localhost:443, fava.local {
 	root /static/* /opt/invenio/var/instance/static
 	try_files {path} {path}/ /index.html
 	reverse_proxy web:5000
