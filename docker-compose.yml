@@ -23,13 +23,20 @@ services:
       - caddy_data:/data
       - caddy_config:/config
   web:
-    image: ghcr.io/front-matter/invenio-rdm-starter:v12.1.0.0
+    #image: ghcr.io/front-matter/invenio-rdm-starter:v12.1.0.0
+    image: iplaces-rdm-13.0.5:1.0.0 
+    #build: .
     pull_policy: if_not_present
     volumes:
       - uploaded_data:/opt/invenio/var/instance/data
       - archived_data:/opt/invenio/var/instance/archive
       - ./invenio.cfg:/opt/invenio/var/instance/invenio.cfg
-
+      # - ./site_build/site:/opt/invenio/var/instance/site
+      # - ./site_build/static:/opt/invenio/var/instance/static
+      # - ./site_build/assets:/opt/invenio/var/instance/assets
+      # - ./site_build/templates:/opt/invenio/var/instance/templates
+      # - ./site_build/app_data:/opt/invenio/var/instance/app_data
+      # - ./site_build/translations:/opt/invenio/var/instance/translations
     environment:
       # Flask
       - INVENIO_APP_TRUSTED_HOSTS=${INVENIO_APP_TRUSTED_HOSTS:-['fava.local', '0.0.0.0', 'localhost', '127.0.0.1']}
@@ -123,7 +130,9 @@ services:
         condition: service_started
   worker:
     command: "celery -A invenio_app.celery worker --beat --events --loglevel=WARNING"
-    image: ghcr.io/front-matter/invenio-rdm-starter:v12.1.0.0
+    #image: ghcr.io/front-matter/invenio-rdm-starter:v12.1.0.0
+    image: iplaces-rdm-13.0.5:1.0.0 
+    #build: .
     pull_policy: if_not_present
     volumes:
       - uploaded_data:/opt/invenio/var/instance/data
