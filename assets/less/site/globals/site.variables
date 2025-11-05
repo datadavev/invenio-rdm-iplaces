@@ -100,6 +100,9 @@
 @darkBrown       : #92400e; // amber
 @darkGrey        : #1e293b; // slate
 
+@lightPacificBlue : #7ad7ed;
+@darkPacificBlue  : #093640;
+
 /*-------------------
     Invenio RDM Colors
 --------------------*/
@@ -122,9 +125,9 @@
 @primaryLabelColor: @darkPrimaryColor;
 
 @navbarBackgroundImage: e(""); // remove background image
-@navbarBackgroundColor: @grey;
+@navbarBackgroundColor: @lightPacificBlue; //@grey;
 @footerLightColor: @grey;
-@footerDarkColor: @darkGrey;
-@subFooterColor: @darkGrey;
+@footerDarkColor: @darkPacificBlue; //@darkGrey;
+@subFooterColor: @darkPacificBlue; //@darkGrey;
 @footerTextLightColor: @white;
 @footerTextDarkColor: @white;
