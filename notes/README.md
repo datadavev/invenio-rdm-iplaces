@@ -26,3 +26,16 @@ In a separate shell, same `cwd`, run the following to setup all the pieces. This
 docker exec -it invenio-rdm-iplaces-worker-1 setup.sh
 ```
 
+
+## Tweaker
+
+The Invenio instance is located at `/opt/invenio/var/instance`
+
+Rebuilding the image
+
+```
+pnpm i replaywebpage
+docker build -t iplaces-rdm-13.0.5:1.0.0 .
+```
+
+Adjust `docker-compose.yml` web and worker services to refer to the built image.
