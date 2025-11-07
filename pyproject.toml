@@ -7,9 +7,10 @@ readme = "README.md"
 requires-python = ">=3.13"
 license = "MIT"
 dependencies = [
-    "invenio-app-rdm>=13.0.5,<14.0.0",
+    "invenio-app-rdm[opensearch2, s3]>=13.0.5,<14.0.0",
     "invenio-search[opensearch2]>=3.0.0",
     "gunicorn~=23.0.0",
+    "invenio-s3>=3.0.2",
 ]
 
 [build-system]
