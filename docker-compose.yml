@@ -32,6 +32,7 @@ services:
       - uploaded_data:/opt/invenio/var/instance/data
       - archived_data:/opt/invenio/var/instance/archive
       - ./invenio.cfg:/opt/invenio/var/instance/invenio.cfg
+      - ./app_data:/opt/invenio/var/instance/app_data
     environment:
       # Flask
       - INVENIO_APP_TRUSTED_HOSTS=${INVENIO_APP_TRUSTED_HOSTS:-['fava.local', '0.0.0.0', 'localhost', '127.0.0.1']}
@@ -141,6 +142,7 @@ services:
       - uploaded_data2:/opt/invenio/src
       - uploaded_data:/opt/invenio/var/instance/data
       - ./invenio.cfg:/opt/invenio/var/instance/invenio.cfg
+      - ./app_data:/opt/invenio/var/instance/app_data      
     environment:
       - INVENIO_SQLALCHEMY_DATABASE_URI=${INVENIO_SQLALCHEMY_DATABASE_URI:-postgresql+psycopg2://inveniordm:inveniordm@db/inveniordm}
       - INVENIO_SEARCH_HOSTS=${INVENIO_SEARCH_HOSTS:-['search:9200']}
