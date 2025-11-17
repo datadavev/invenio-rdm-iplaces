@@ -254,7 +254,7 @@
   icon: file alternate
   props:
     csl: post-weblog
-    datacite_general: Preprint
+    datacite_general: BlogPost
     datacite_type: "BlogPost"
     openaire_resourceType: "0016"
     openaire_type: publication
@@ -422,7 +422,7 @@
   icon: file alternate
   props:
     csl: thesis
-    datacite_general: Text
+    datacite_general: Thesis
     datacite_type: Thesis
     openaire_resourceType: "0006"
     openaire_type: publication
@@ -548,7 +548,7 @@
   icon: columns
   props:
     csl: graphic
-    datacite_general: Text
+    datacite_general: Poster
     datacite_type: Poster
     openaire_resourceType: "0004"
     openaire_type: publication
@@ -961,6 +961,112 @@
     en: Workflow
     sv: Workflow
     de: Workflow
+  tags:
+    - depositable
+    - linkable
+- id: project
+  icon: file alternate
+  props:
+    csl: project
+    datacite_general: Project
+    datacite_type: Project
+    openaire_resourceType: "9999"
+    openaire_type: project
+    eurepo: info:eu-repo/semantics/report
+    schema.org: https://schema.org/Project
+    subtype: ""
+    type: project
+    marc21_type: publication
+    marc21_subtype: ""
+  title:
+    en: Project
+    sv: Projektet
+    de: Projekt
+  tags:
+    - depositable
+    - linkable
+
+- id: service
+  icon: file alternate
+  props:
+    csl: service
+    datacite_general: Service
+    datacite_type: Service
+    openaire_resourceType: "9998"
+    openaire_type: service
+    eurepo: info:eu-repo/semantics/service
+    schema.org: https://schema.org/Service
+    subtype: ""
+    type: service
+    marc21_type: publication
+    marc21_subtype: ""
+  title:
+    en: Service
+    sv: Service
+    de: Service
+  tags:
+    - depositable
+    - linkable
+- id: instrument
+  icon: file alternate
+  props:
+    csl: instrument
+    datacite_general: Instrument
+    datacite_type: Instrument
+    openaire_resourceType: "9997"
+    openaire_type: instrument
+    eurepo: info:eu-repo/semantics/instrument
+    schema.org: https://schema.org/Thing
+    subtype: ""
+    type: instrument
+    marc21_type: publication
+    marc21_subtype: ""
+  title:
+    en: Instrument
+    sv: Instrument
+    de: Instrument
+  tags:
+    - depositable
+    - linkable
+- id: studyregistration
+  icon: file alternate
+  props:
+    csl: studyregistration
+    datacite_general: StudyRegistration
+    datacite_type: Study Registration
+    openaire_resourceType: "9996"
+    openaire_type: rtudyregistration
+    eurepo: info:eu-repo/semantics/studyregistration
+    schema.org: https://schema.org/CreativeWork
+    subtype: ""
+    type: studyregistration
+    marc21_type: publication
+    marc21_subtype: ""
+  title:
+    en: Study Registration
+    sv: Study Registration
+    de: Study Registration
+  tags:
+    - depositable
+    - linkable
+- id: award
+  icon: file alternate
+  props:
+    csl: award
+    datacite_general: Award
+    datacite_type: Award
+    openaire_resourceType: "9995"
+    openaire_type: award
+    eurepo: info:eu-repo/semantics/award
+    schema.org: https://schema.org/Grant
+    subtype: ""
+    type: award
+    marc21_type: publication
+    marc21_subtype: ""
+  title:
+    en: Award
+    sv: Award
+    de: Auszeichnung
   tags:
     - depositable
     - linkable
