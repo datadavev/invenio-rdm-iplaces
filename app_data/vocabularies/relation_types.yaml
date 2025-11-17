@@ -236,3 +236,17 @@
     en: Obsoletes
     sv: Ersätter
     de: Ersetzt
+- id: iscollectedby
+  props:
+    datacite: IsCollectedBy
+  title:
+    en: Is collected by
+    sv: Samlas in av
+    de: Wird gesammelt von
+- id: collects
+  props:
+    datacite: Collects
+  title:
+    en: Collects
+    sv: Samlar
+    de: Sammelt
