@@ -10,6 +10,16 @@
 # - DB: (PostgresSQL) (exposed port: 5432)
 # - Cache and message queue: Valkey (exposed port: 6379)
 # - Search platform: OpenSearch (exposed ports: 9200, 9300)
+volumes:
+  caddy_data:
+  caddy_config:
+  app_data:
+  uploaded_data:
+  uploaded_data2:
+  archived_data:
+  postgres_data:
+  opensearch_data:
+  cache_data:
 
 services:
   proxy:
@@ -24,8 +34,9 @@ services:
       - caddy_config:/config
   web:
     #image: ghcr.io/front-matter/invenio-rdm-starter:v12.1.0.0
-    image: iplaces-rdm-13.0.5:1.0.1 
+    image: iplaces-rdm-13.0.5:1.0.3
     #build: .
+    container_name: iplaces-web
     pull_policy: if_not_present
     volumes:
       - uploaded_data2:/opt/invenio/src
@@ -135,7 +146,8 @@ services:
   worker:
     command: "celery -A invenio_app.celery worker --beat --events --loglevel=WARNING"
     #image: ghcr.io/front-matter/invenio-rdm-starter:v12.1.0.0
-    image: iplaces-rdm-13.0.5:1.0.1 
+    image: iplaces-rdm-13.0.5:1.0.3
+    container_name: iplaces-worker
     #build: .
     pull_policy: if_not_present
     volumes:
@@ -192,6 +204,7 @@ services:
   db:
     image: postgres:17.4-bookworm
     restart: "unless-stopped"
+    container_name: iplaces-db
     environment:
       - POSTGRES_USER=${POSTGRES_USER:-inveniordm}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-inveniordm}
@@ -203,6 +216,7 @@ services:
   search:
     image: opensearchproject/opensearch:2.12.0
     restart: "unless-stopped"
+    container_name: iplaces-search
     environment:
       - bootstrap.memory_lock=true
       - OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m
@@ -222,13 +236,3 @@ services:
       - "127.0.0.1:9600:9600"
     volumes:
       - opensearch_data:/usr/share/opensearch/data
-volumes:
-  app_data:
-  uploaded_data:
-  uploaded_data2:
-  archived_data:
-  caddy_data:
-  caddy_config:
-  postgres_data:
-  opensearch_data:
-  cache_data:

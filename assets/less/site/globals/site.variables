@@ -103,6 +103,13 @@
 @lightPacificBlue : #7ad7ed;
 @darkPacificBlue  : #093640;
 
+@turqoise         : #40e0d0;
+@beige            : #f5f5dc;
+@coralGlow            : #ff7f50;
+@emerald          : #2ecc71;
+@amberGold         : #ffc107;
+@sapphireSky        : #0074d9;
+
 /*-------------------
     Invenio RDM Colors
 --------------------*/
@@ -125,9 +132,9 @@
 @primaryLabelColor: @darkPrimaryColor;
 
 @navbarBackgroundImage: e(""); // remove background image
-@navbarBackgroundColor: @lightPacificBlue; //@grey;
+@navbarBackgroundColor: @sapphireSky; //@grey;
 @footerLightColor: @grey;
 @footerDarkColor: @darkPacificBlue; //@darkGrey;
 @subFooterColor: @darkPacificBlue; //@darkGrey;
 @footerTextLightColor: @white;
-@footerTextDarkColor: @white;
+@footerTextDarkColor: @beige;
