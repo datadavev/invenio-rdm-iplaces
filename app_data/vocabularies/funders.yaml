@@ -137856,3 +137856,10 @@
   name: Université Claude Bernard Lyon 1
   title:
     fr: Université Claude Bernard Lyon 1
+- id: 04h0mx776
+  identifiers:
+    - identifier: 04h0mx776
+      scheme: ror
+  name: Social Capital Foundation
+  title:
+    en: Social Capital Foundation
